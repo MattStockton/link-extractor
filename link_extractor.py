@@ -24,7 +24,7 @@ def main(args):
     output_file = os.path.join(output_dir,"results.csv")
             
     try:
-        input_lines = [line.strip().split(",") for line in open(cmd_vars["input_file"])]
+        input_lines = [line.strip().split(",") for line in open(cmd_vars["input_file"], 'rU')]
         source_urls = [line[0] for line in input_lines[1:] if line[0]]
         look_for_urls = [line[1] for line in input_lines[1:] if len(line) > 1 and line[1]]
     except IOError:
